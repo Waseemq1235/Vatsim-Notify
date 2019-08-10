@@ -1,0 +1,5 @@
+config.properties
+.idea/*
+VATSIMNotify.iml
+pom.xml
+target/*
