@@ -28,7 +28,7 @@ public class ControllerManager {
      */
     public void addController(Controller controller) {
         if (!controller.getCallsign().contains("ATIS")) {
-            if (controller.getCallsign().contains("SUP"))
+            if (controller.getCallsign().endsWith("_SUP"))
                 return;
 
             if (controller.getCallsign().matches("ATM|DATM|TA|EC|FE|WM"))
