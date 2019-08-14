@@ -51,6 +51,9 @@ public class Controller {
         if (cArray.get(0).endsWith("_OBS"))
             return;
 
+        if(cArray.size() <= 10)
+            return;
+
         callsign = cArray.get(0);
         cid = cArray.get(1);
         realName = cArray.get(2);

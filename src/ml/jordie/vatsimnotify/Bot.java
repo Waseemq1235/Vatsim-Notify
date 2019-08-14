@@ -14,6 +14,7 @@ import net.dv8tion.jda.core.entities.TextChannel;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Bot {
 
@@ -127,6 +128,7 @@ public class Bot {
                 eb.setFooter("VATSIM Notify", api.getSelfUser().getEffectiveAvatarUrl());
                 eb.setColor(Color.GREEN);
                 notifyChannel.sendMessage(eb.build()).queue();
+                notifyChannel.sendMessage("@here").complete().delete().queueAfter(5, TimeUnit.MINUTES);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -151,6 +153,7 @@ public class Bot {
                 eb.setFooter("VATSIM Notify", api.getSelfUser().getEffectiveAvatarUrl());
                 eb.setColor(Color.RED);
                 notifyChannel.sendMessage(eb.build()).queue();
+                notifyChannel.sendMessage("@here").complete().delete().queueAfter(5, TimeUnit.MINUTES);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
