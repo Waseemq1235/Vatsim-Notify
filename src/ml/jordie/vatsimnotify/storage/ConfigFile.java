@@ -24,7 +24,8 @@ public class ConfigFile {
                 p.setProperty("POSITION_OPEN_NOTIFICATION", "%name% is opening %position.");
                 p.setProperty("POSITION_CLOSED_NOTIFICATION", "%name% is closed %position.");
                 p.setProperty("CLOSING_NOTIFICATIONS", "no");
-                p.store(new FileOutputStream("config.properties"), "github.com/JordannDev/VatsimNotify");
+                p.setProperty("VATSIM_DATA_SOURCE", "http://us.data.vatsim.net/vatsim-data.txt");
+                p.store(new FileOutputStream("config.properties"), "https://github.com/jordanndev/vatsim-notify");
             }
         } catch (Exception ex) {
             ex.printStackTrace();
