@@ -19,18 +19,15 @@ public class Parser {
             ArrayList<String> lines = new ArrayList<>();
 
             String line = br.readLine();
-            while (!(line = br.readLine()).equalsIgnoreCase("!SERVERS:")) {
-                if (!line.startsWith(";") || !line.startsWith("!")) {
+            while (!(line = br.readLine()).equalsIgnoreCase("!SERVERS:"))
+                if (!line.startsWith(";") || !line.startsWith("!"))
                     lines.add(line);
-                }
-            }
 
             for (String s : lines) {
                 if (s.contains(":ATC:")) {
                     Controller ctrl = new Controller(s);
-                    if (ctrl.getCid() != null) {
+                    if (ctrl.getCid() != null)
                         ControllerManager.getInstance().addController(ctrl);
-                    }
                 }
             }
         } catch (Exception ex) {

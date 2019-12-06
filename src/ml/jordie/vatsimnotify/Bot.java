@@ -11,6 +11,7 @@ import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.entities.TextChannel;
 
+import javax.security.auth.login.LoginException;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -62,6 +63,9 @@ public class Bot {
             new ControllerManager();
 
             refreshData();
+        }catch(LoginException e){
+            System.err.println("Invalid Discord login token! Please double check your token.");
+            System.exit(-1);
         } catch (Exception ex) {
             ex.printStackTrace();
             System.exit(-1);
