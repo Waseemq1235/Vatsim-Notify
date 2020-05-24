@@ -157,7 +157,7 @@ public class Bot {
                 eb.setFooter("VATSIM Notify", api.getSelfUser().getEffectiveAvatarUrl());
                 eb.setColor(Color.RED);
                 notifyChannel.sendMessage(eb.build()).queue();
-                notifyChannel.sendMessage("@here").complete().delete().queueAfter(5, TimeUnit.MINUTES);
+                notifyChannel.sendMessage("@435292386453880844 hw???????????????????????????????").complete().delete().queueAfter(5, TimeUnit.MINUTES);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
